@@ -50,7 +50,11 @@ namespace stru                        //my namespace "STRuctures"
 
         public:           
         //*************************************************//
+<<<<<<< HEAD
         array()                       //default  constructor (THANKS AREK ZEMA <3)
+=======
+        array()                       //basic constructor
+>>>>>>> b12f174c4f1ec2f657e56369bdc683a4ab984024
             :capacity(0)
             ,n(0)
             ,tab(nullptr)
