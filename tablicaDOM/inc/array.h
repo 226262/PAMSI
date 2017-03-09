@@ -45,7 +45,7 @@ namespace stru                        //my namespace "STRuctures"
             }    
             delete[] tab;
             tab=newtab;
-               
+            
         }
 
         public:           

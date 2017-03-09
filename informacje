@@ -1,0 +1,22 @@
+GIT i github
+ chodzi o umiejętność implementacji dowolnego agorytmu,
+ 1 cz struktury + algorytmy,
+ 2 cz mtody szt inteligencji
+ złożoność obliczeniowa
+ sprawka wymagane :c
+ spr(wyniki testów, z wykresem,złożoność obliczeniowa )
+ 1 nieobecność ok, 2 uspr + nadrobienie
+ sprawozdanie musi być do każdego zadania
+ dwie kartkówki: w okolicach grafów/tablic asocjacyjnych i na samym końcu kursu; (np zasady konstruowania drzew i jakiś kawałek do zaimplementowania)
+ Na końcu prezentacja projektu ze sztuczną inteligencją
+
+LITERATURA:
+-Thinking in C++, Eckel (też dobre)
+-Algorytmy i struktury danych, Aho
+-Projektowanie i analiza algorytmów, Aho
+-Wprowadzenie do algorytmów, Cormen (MUST HAVE)
+*wzorce projektowe, Gamma/ Agile software devlopment/Design patterns principles?
+
+ZASADY: Linux, c++, g++, zakaz STL, kod programów w repo na githubie (226262/ PAMSI)
+
+1 zajęcia: Tablica, 

@@ -170,11 +170,11 @@ namespace stru                        //my namespace "STRuctures"
             return nullptr;                      
         }
         //*************************************************//
-        unsigned int get_size() const{
+        const unsigned int get_size() const{
             return n;
         }
         //*************************************************//
-        unsigned int get_capacity() const{
+        const unsigned int get_capacity() const{
             return capacity;
         }
 
