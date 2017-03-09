@@ -10,10 +10,6 @@ int main(){
     hesz.insert(4,123);
     hesz.print();
 
-    int * SEARCHED=hesz.search(45);
-    if(SEARCHED){
-             std::cout<<"Znalazlem "<<*SEARCHED<<"\n";             //cos rob z 72
-    }
     std::cout<<"cout! "<<hesz.get_size()<<" "<<hesz.get_capacity()<<"\n";
 
 }

@@ -1,5 +1,5 @@
 /*
-    Made by  226262 Wrocław University of Technology
+Made by  226262 Wrocław University of Technology
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -14,48 +14,63 @@
     You should have received a copy of the GNU General Public License
     along with this program; if not, write to the Free Software
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+
+
+This header contains dynamic array template.
+    Interface:
+        -push_back(element) -creates element on the end of array. If there
+            is no space it calls allocate_to(2x capacity) for space for additional elements   
+        -pop_back()         -deletes last element. If number of elements is less than 1/4 of 
+            capacity it calls allocate_to(capacity/2) to not wasting space 
+        -insert(index, element) -inserts in index new element
+        -operator[index]- returning pointer for element in index
+    Private:
+        -n              - number of elements
+        -capacity       -current memory capacity in array
+        -tab            -actual pointer to array
+        -allocate_to(number)   - allocates new array with capacity=number. Can delete elements!
+
+    WARNING: this implementation contains printing out some messages (mainly for debugging)
+    Additional information: this implementation is inspired by the book: "Introduction to Algorithms" Cormen, Leiserson, Stein and Rivest 
 */
 #ifndef ARRAY_H
 #define ARRAY_H
 
 #include<iostream>
 
-namespace stru                        //my namespace "STRuctures"
+namespace stru                        //my namespace "STRUctures"
 {
     template <typename TYP>
-    class array{                     //Simple array (i don't know yet what will this do)
+    class array{                     //Simple array  (USING COUT FOR TESTING!)
             
         unsigned int capacity,n;
         TYP* tab;
-        
         
         //*************************************************//
         void allocate_to(unsigned int howmany){
 
             std::cout<<"Bylo: "<<this->capacity<<" Alokuje: "<<howmany<<std::endl;
-            if(n>howmany){
+            if(n>howmany){          //Cutting  off if You want to allocate less memory than numbers
                 n=howmany;
             }
             capacity=howmany;
             TYP* newtab=new TYP[capacity];
-            
             
             for(unsigned int i=0;i<n;i++){
                 newtab[i]=tab[i];
             }    
             delete[] tab;
             tab=newtab;
-               
         }
 
         public:           
         //*************************************************//
-        array()                       //default  constructor (THANKS AREK ZEMA <3)
+        array()                       //default  constructor 
             :capacity(0)
             ,n(0)
             ,tab(nullptr)
         {
-            std::cout<<"Array Constructor\n";
+            std::cout<<"Array Constructor\n";  
         }
 
         //*************************************************//
@@ -69,15 +84,13 @@ namespace stru                        //my namespace "STRuctures"
         }
 
         //*************************************************//
-        void print()const {
+        void print()const {      //This method is only for testing!
             std::cout<<"Zawartosc tablicy: \n";
             for (unsigned int i=0;i<n;i++){
                 std::cout<<"EL:"<<i<<" "<<this->tab[i]<<"\n";
             }
             std::cout<<"\n";
         }
-        
-
 
         //*************************************************//
         void push_back(TYP value){
@@ -91,34 +104,37 @@ namespace stru                        //my namespace "STRuctures"
             tab[n]=value;
             n++;
         }
+
         //*************************************************//
         void insert(unsigned int where,TYP what){
+
             if(n<where){
                 std::cerr<<"~~~~~~~~~~~~~~~\nBad using INSERT method. Out of avalible space!\n~~~~~~~~~~~~~~~\n";
                 return;
             }
-
             if(capacity<=n){         //If not enough space for insertion:
-                
-                std::cout<<"Bylo: "<<this->capacity<<" Alokuje 2x wiecej! "<<std::endl;
+
+                std::cout<<"Bylo: "<<this->capacity<<" Alokuje 2x wiecej!\n";
 
                 capacity=2*capacity;
+
                 TYP* newtab=new TYP[capacity];
             
                 for(unsigned int i=0;i<where;i++){
                     newtab[i]=tab[i];
                 }
+
                 newtab[where]=what;
+
                 for(unsigned int i=where;i<n;i++){
                     newtab[i+1]=tab[i];
                 }  
+
                 delete[] tab;
                 tab=newtab;
                 n++;
                 
-
-
-            }else{                  //If avalible space is ok
+            }else{                                        //If avalible space is ok
                 TYP* newtab=new TYP[capacity];
             
                 for(unsigned int i=0;i<where;i++){
@@ -131,43 +147,33 @@ namespace stru                        //my namespace "STRuctures"
                 delete[] tab;
                 tab=newtab;
                 n++;
-
-
-
-            }
-                             
-
+                }
         }
+
         //*************************************************//
         void pop_back(){
-            if(!n){
+            if(!n || n==1){
                 allocate_to(0);            //Idiotoodpornosc here
                 return;
-            }else 
-            if(n<0){ std::cerr<<"NIE POWINNO BYC UJEMNYCH ELEMENTOW :O \n"; return;
-            }else
-            if(n>0){
-                n--;
-            }
-            if(!n){
-                allocate_to(0);
-                return;
-            }else
-            if(n<=capacity/4){
-                allocate_to(capacity/2);
-            }else{
-                allocate_to(capacity);
-            }
 
-        }
-        //*************************************************//
-        TYP *search(TYP value){                
-            for (unsigned int i=0;i<n;i++){
-                if(tab[i]==value) {
-                    return &tab[i];
+            }else{  //If number of elements is not 0 or 1 
+                
+                if(n<0){ 
+                    std::cerr<<"NIE POWINNO BYC UJEMNYCH ELEMENTOW :O \n"; 
+                    return;
+        
+                }
+                if(n>0){
+                    n--;
+                }
+                if(n<=capacity/4){
+                    allocate_to(capacity/2);
+
+                }else{
+                    allocate_to(capacity);
+
                 }
             }
-            return nullptr;                      
         }
         //*************************************************//
         const unsigned int get_size() const{
@@ -187,10 +193,11 @@ namespace stru                        //my namespace "STRuctures"
         }
 
         //*************************************************//
-        ~array()                        //Destructor
-        {
+        ~array(){                        //Destructor
+        
             delete[] tab;
-            std::cout<<"Array Destructor\n";}
+            std::cout<<"Array Destructor\n";
+        }
 
 
     };
