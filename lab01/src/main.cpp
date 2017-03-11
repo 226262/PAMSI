@@ -42,7 +42,7 @@ int main(int argc, char *argv[]){
         for(int j=0;j<1;j++){                  //20 times run pushing and save time
             
             stru::array<int> hesz;              //Declaration of array
-
+            
             auto start_time= Clock::now();      //START CLOCK
 
             run_pushing(hesz,elements,options);
