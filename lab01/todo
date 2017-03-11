@@ -1,2 +1,6 @@
-Poprawic zwracanie metody SEARCH,
-Dodac dodawanie w jakiejs pozycji indeksu
+$-Mierzenie czasu wykonania programu
+$-Przerobienie push_back'a do różnych wywołań
+$-Przekazywanie w main wartości do wywołania
+$-Zapisanie danych do pliku
+-Zewnętrzy skrypt pythonowy który uruchomi program,zbierze dane i wyplotuje wszystko
+-Ogarnięcie sprawozdania LATEX!!!!!!!!

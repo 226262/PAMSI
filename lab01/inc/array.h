@@ -49,7 +49,7 @@ namespace stru                        //my namespace "STRUctures"
         //*************************************************//
         void allocate_to(unsigned int howmany){
 
-            std::cout<<"Bylo: "<<this->capacity<<" Alokuje: "<<howmany<<std::endl;
+            //std::cout<<"Bylo: "<<this->capacity<<" Alokuje: "<<howmany<<std::endl;
             if(n>howmany){          //Cutting  off if You want to allocate less memory than numbers
                 n=howmany;
             }
@@ -70,7 +70,6 @@ namespace stru                        //my namespace "STRUctures"
             ,n(0)
             ,tab(nullptr)
         {
-            std::cout<<"Array Constructor\n";  
         }
 
         //*************************************************//
@@ -80,7 +79,6 @@ namespace stru                        //my namespace "STRUctures"
         {
             tab=new TYP[capacity];
             tab[0]=value;
-            std::cout<<"Array Constructor"<<value<<"\n";
         }
 
         //*************************************************//
@@ -93,13 +91,17 @@ namespace stru                        //my namespace "STRUctures"
         }
 
         //*************************************************//
-        void push_back(TYP value){
+        void push_back(TYP value,unsigned short int option=2){
             if(!capacity){                       //If capacity equals 0
                 allocate_to(1);
             }
             if(capacity==n){
-                allocate_to(2*capacity);
-                
+
+                if(option==1){
+                    allocate_to(capacity+1);
+                }else{
+                    allocate_to(option*capacity);
+                }
             }
             tab[n]=value;
             n++;
@@ -114,7 +116,7 @@ namespace stru                        //my namespace "STRUctures"
             }
             if(capacity<=n){         //If not enough space for insertion:
 
-                std::cout<<"Bylo: "<<this->capacity<<" Alokuje 2x wiecej!\n";
+             //   std::cout<<"Bylo: "<<this->capacity<<" Alokuje 2x wiecej!\n";
 
                 capacity=2*capacity;
 
@@ -196,7 +198,6 @@ namespace stru                        //my namespace "STRUctures"
         ~array(){                        //Destructor
         
             delete[] tab;
-            std::cout<<"Array Destructor\n";
         }
 
 
