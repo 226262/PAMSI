@@ -3,6 +3,10 @@ USING THIS PROGRAM:
 
     ./engine <FILENAME> <HOW MANY ITERATION> <OPTION FOR ALLOCATION>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 083aeafdb5d6d9480f5ff91d991927614ea1d7c2
 */
 #include<iostream>
 #include<chrono>
@@ -42,7 +46,7 @@ int main(int argc, char *argv[]){
         for(int j=0;j<1;j++){                  //20 times run pushing and save time
             
             stru::array<int> hesz;              //Declaration of array
-
+            
             auto start_time= Clock::now();      //START CLOCK
 
             run_pushing(hesz,elements,options);
