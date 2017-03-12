@@ -3,10 +3,7 @@ USING THIS PROGRAM:
 
     ./engine <FILENAME> <HOW MANY ITERATION> <OPTION FOR ALLOCATION>
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 083aeafdb5d6d9480f5ff91d991927614ea1d7c2
 */
 #include<iostream>
 #include<chrono>
