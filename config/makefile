@@ -6,16 +6,16 @@ LFLAGS = -Wall
 SRCDIR := src
 OBJDIR := obj
 INCDIR := inc
-OBJS := $(addprefix $(OBJDIR)/,main.o engine.o mode.o)  #Place objects
-DEPS = $(addprefix $(INCDIR)/,engine.h mode.h)   # Place Headers
-LIBS =  -lsfml-graphics -lsfml-window -lsfml-system
+SRC=$(wildcard $(SRCDIR)/*.cpp)
+OBJS := $(addprefix $(OBJDIR)/,$(SRC:$(SRCDIR)/%.cpp=%.o))  #Place objects
+LIBS =  #-lsfml-graphics -lsfml-window -lsfml-system
 NAME = engine
 
 
 all:
-	$(MAKE) clean
-	$(MAKE) build
-	$(MAKE) run
+	$(MAKE) --no-print-directory clean
+	$(MAKE) --no-print-directory -j build
+	$(MAKE) --no-print-directory run
 
 .PHONY : clean
 clean:

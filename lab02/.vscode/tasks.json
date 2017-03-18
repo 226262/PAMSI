@@ -22,6 +22,10 @@
             "args":["run","-j4"]
         },
         {
+            "taskName": "val",
+            "args":["val"]
+        },
+        {
             "taskName": "clean",
             "args": ["clean"]
         }

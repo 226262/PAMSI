@@ -149,7 +149,7 @@ namespace stru                        //my namespace "STRUctures"
                 delete[] tab;
                 tab=newtab;
                 n++;
-                }
+            }
         }
 
         //*************************************************//
