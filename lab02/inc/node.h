@@ -16,11 +16,11 @@ namespace stru{
         node<TYP>* next;
 
         public:
-        node():next(nullptr){};
-        TYP get_element(){return element;}
-        node* get_next(){return next;}
-        void set_element(TYP setter){element=setter;}
-        void set_next(node<TYP>* setter){next=setter;}
+        node():next(nullptr){};                           //constructor
+        TYP get_element(){return element;}                //element geter
+        node* get_next(){return next;}                    //next getter
+        void set_element(TYP setter){element=setter;}     //element setter
+        void set_next(node<TYP>* setter){next=setter;}    //next setter
         ~node(){};
 
     };

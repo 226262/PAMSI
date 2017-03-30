@@ -29,13 +29,9 @@ namespace stru{
         virtual void perform_run(unsigned int size, unsigned short int option);
         virtual void reset();
 
-        //Specific methods for list:
-        void push_back(TYP what);
+        //Specific methods for list:  TODO
         void push_front(TYP what);
         void pop_front();
-        void pop_back();
-        void insert(TYP what,unsigned int where);
-        void remove(unsigned int where);
         bool empty();
 
         //METDODS FO DEBUGGING:
@@ -103,12 +99,6 @@ namespace stru{
             newnode->set_next(head);
             head=newnode;
         }
-    }
-
-    //*************************************************//
-    template <typename TYP>
-    void list<TYP>::push_back(TYP what){
-    
     }
 
 

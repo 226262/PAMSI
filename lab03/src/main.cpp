@@ -1,5 +1,5 @@
 /************************************************************************************    
-*    Made by  226262 Wrocław University of Technology                               *                
+*    Made by  226262 Wroclaw University of Technology                               *                
 *                                                                                   *                        
 *    This program is free software; you can redistribute it and/or modify           *            
 *    it under the terms of the GNU General Public License as published by           *        
@@ -22,8 +22,10 @@
 #include"../inc/array.h"
 #include"../inc/irunnable.h"
 #include"../inc/timer.h"
-#include"../inc/list.h"
-#include "../inc/stack.h"
+#include"../inc/istack.h"
+#include"../inc/ilist.h"
+#include"../inc/iqueue.h"
+
 
 //*********************************************************//
 int main(int argc, char *argv[]){
@@ -32,12 +34,6 @@ int main(int argc, char *argv[]){
     timer STOPEREK;
     stru::array<int> tablica;
     
-    stru::stack<int> stosik;
-
-    stosik.push(1);
-    stosik.print();
-    stosik.push(2);
-    stosik.print();
     
 
     
