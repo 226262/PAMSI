@@ -2,13 +2,13 @@
 This is stack interface
 
 */
-#ifndef ISTACK_H
-#define ISTACK_H
+#ifndef ISTACK_HPP
+#define ISTACK_HPP
 
 
 namespace stru{
 
-    template <typename TYP>
+  template <typename TYP>
     class istack { //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 

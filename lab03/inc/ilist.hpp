@@ -2,8 +2,8 @@
 This is list interface
 
 */
-#ifndef ILIST_H
-#define ILIST_H
+#ifndef ILIST_HPP
+#define ILIST_HPP
 
 
 namespace stru{

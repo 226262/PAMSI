@@ -3,13 +3,13 @@ This class is just like stopwatch.
 It measures time of run of any irunnable object.
 WARNING: object which is measured is reset after run! 
 */
-#ifndef TIMER_H
-#define TIMER_H
+#ifndef TIMER_HPP
+#define TIMER_HPP
 
 #include<chrono>
 
-#include"irunnable.h"
-#include"array.h"
+#include"irunnable.hpp"
+#include"array.hpp"
 
 
 typedef std::chrono::high_resolution_clock Clock;   

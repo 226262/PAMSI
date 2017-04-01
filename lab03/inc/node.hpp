@@ -4,8 +4,8 @@ should be used only there!
 
 */
 
-#ifndef NODE_H
-#define NODE_H
+#ifndef NODE_HPP
+#define NODE_HPP
 
 
 namespace stru{

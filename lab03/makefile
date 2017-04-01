@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = -Wall -pedantic -std=c++11 -g
+CXXFLAGS = -Wall -pedantic -std=c++11 -g -O2
 INCLUDES = -Iinc
 LFLAGS = -Wall
 
@@ -13,21 +13,21 @@ NAME = engine
 
 
 all:
-	$(MAKE) --no-print-directory clean
-	$(MAKE) --no-print-directory -j build
+	$(MAKE) --no-print-directory cle
+	$(MAKE) --no-print-directory -j bui
 	$(MAKE) --no-print-directory run
 
 .PHONY : clean
-clean:
+cle:
 	rm -f $(OBJDIR)/*.o *~ $(NAME)
 
-$(OBJDIR)/%.o: $(SRCDIR)/%.cpp $(INCDIR)/%.h
+$(OBJDIR)/%.o: $(SRCDIR)/%.cpp $(INCDIR)/%.hpp
 	$(CXX) $(CXXFLAGS) $(INCLUDES) -c -o $@ $<
 
 $(OBJDIR)/main.o: $(SRCDIR)/main.cpp
 	$(CXX) $(CXXFLAGS) $(INCLUDES) -c -o $@ $<
 
-build: $(OBJS)
+bui: $(OBJS)
 	$(CXX) $(LFLAGS) -o $(NAME) $(OBJS) $(LIBS)
 
 run:

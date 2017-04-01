@@ -1,9 +1,9 @@
 /*
 This is QUEUE interface 
 
-*/
-#ifndef IQUEUE_H
-#define IQUEUE_H
+nnn*/
+#ifndef IQUEUE_HPP
+#define IQUEUE_HPP
 
 
 namespace stru{
@@ -19,7 +19,7 @@ namespace stru{
 
         //General methods from bigger interface?
         virtual const unsigned int size() const=0;
-        virtual TYP top()=0;                          //Show what is in the front of queue
+        virtual TYP first()=0;                          //Show what is in the front of queue
 
         //Specific methods for stack:
         virtual void enqueue(TYP what)=0;             //Put on end of queue
