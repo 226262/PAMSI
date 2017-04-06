@@ -1,0 +1,96 @@
+;; -*- mode: emacs-lisp; coding: emacs-mule; -*-
+;; --------------------------------------------------------------------------
+;; Desktop File for Emacs
+;; --------------------------------------------------------------------------
+;; Created Sat Apr  1 14:56:43 2017
+;; Desktop file format version 206
+;; Emacs version 24.4.1
+
+;; Global section:
+(setq desktop-saved-frameset [frameset 1 (22751 41867 957637 777000) (desktop . "206") "raf@rafalx201.grzyby.edu" nil nil ((((font-backend xft x) (font . "-unknown-Droid Sans Mono-normal-normal-normal-*-15-*-*-*-m-0-iso10646-1") (font-parameter . "Monospace 11") (border-width . 0) (internal-border-width . 0) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars . right) (foreground-color . "#839496") (background-color . "#002b36") (mouse-color . "black") (border-color . "black") (screen-gamma) (line-spacing) (left-fringe . 9) (right-fringe . 9) (scroll-bar-foreground) (scroll-bar-background . "grey75") (menu-bar-lines . 1) (tool-bar-lines . 0) (title) (wait-for-wm . t) (fullscreen . maximized) (tool-bar-position . top) (icon-type . t) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 16) (alpha) (horizontal-scroll-bars . t) (display-type . color) (background-mode . dark) (cursor-color . "#839496") (sticky) (environment) (frameset--id . "9A96-CEFD-B15C-D576") (frameset--mini t . t) (height . 40) (width . 138) (modeline . t) (minibuffer . t) (unsplittable) (left . 0) (top . 29) (icon-name) (visibility . t) (display . ":0") (explicit-name)) ((min-height . 4) (min-width . 20) (min-height-ignore . 3) (min-width-ignore . 12) (min-height-safe . 1) (min-width-safe . 4) (min-pixel-height . 72) (min-pixel-width . 180) (min-pixel-height-ignore . 54) (min-pixel-width-ignore . 108) (min-pixel-height-safe . 18) (min-pixel-width-safe . 36)) hc (pixel-width . 1280) (pixel-height . 713) (total-width . 142) (total-height . 40) (normal-height . 1.0) (normal-width . 1.0) (combination-limit) (leaf (pixel-width . 918) (pixel-height . 713) (total-width . 102) (total-height . 40) (normal-height . 1.0) (normal-width . 0.7171875) (buffer "timer.cpp" (selected . t) (hscroll . 0) (fringes 9 9 nil) (margins 2) (scroll-bars 16 2 t nil) (vscroll . 0) (dedicated) (point . 340) (start . 1))) (leaf (last . t) (pixel-width . 362) (pixel-height . 713) (total-width . 40) (total-height . 40) (normal-height . 1.0) (normal-width . 0.2828125) (buffer "*SPEEDBAR*" (selected) (hscroll . 0) (fringes 9 9 nil) (margins 2) (scroll-bars 16 2 t nil) (vscroll . 0) (dedicated . t) (point . 252) (start . 1)))))])
+(setq desktop-missing-file-warning nil)
+(setq tags-file-name nil)
+(setq tags-table-list nil)
+(setq search-ring nil)
+(setq regexp-search-ring nil)
+(setq register-alist nil)
+(setq file-name-history '("~/Documents/pamsi/lab03/src/"))
+
+;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 206
+  "/home/raf/Documents/pamsi/lab03/src/timer.cpp"
+  "timer.cpp"
+  'c++-mode
+  '(abbrev-mode linum-mode autopair-mode auto-complete-mode yas-minor-mode flycheck-mode irony-mode company-mode)
+  340
+  '(340 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/raf/Documents/pamsi/lab03/src/main.cpp"
+  "main.cpp"
+  'c++-mode
+  '(abbrev-mode linum-mode autopair-mode auto-complete-mode yas-minor-mode flycheck-mode irony-mode company-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/raf/Documents/pamsi/lab03/inc/timer.hpp"
+  "timer.hpp"
+  'c++-mode
+  '(abbrev-mode linum-mode autopair-mode auto-complete-mode yas-minor-mode flycheck-mode irony-mode company-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/raf/Documents/pamsi/lab03/inc/list.hpp"
+  "list.hpp"
+  'c++-mode
+  '(abbrev-mode linum-mode autopair-mode auto-complete-mode yas-minor-mode flycheck-mode irony-mode company-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  nil)
+
+(desktop-create-buffer 206
+  "/home/raf/Documents/pamsi/lab03/inc/node.hpp"
+  "node.hpp"
+  'c++-mode
+  '(abbrev-mode linum-mode autopair-mode auto-complete-mode yas-minor-mode flycheck-mode irony-mode company-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/raf/Documents/pamsi/lab03/inc/ilist.hpp"
+  "ilist.hpp"
+  'c++-mode
+  '(abbrev-mode linum-mode autopair-mode auto-complete-mode yas-minor-mode flycheck-mode irony-mode company-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/raf/Documents/pamsi/lab03/inc/array.hpp"
+  "array.hpp"
+  'c++-mode
+  '(abbrev-mode linum-mode autopair-mode auto-complete-mode yas-minor-mode flycheck-mode irony-mode company-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+

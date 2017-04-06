@@ -28,43 +28,33 @@
 #include"../inc/stack.hpp"
 #include "../inc/queue.hpp"
 #include"../inc/list.hpp"
+#include"../inc/quicksort.hpp"
+
 
 //*********************************************************//
 int main(int argc, char *argv[]){
 
-  if(argc<3){
-    std::cerr<<"USE THIS PROGRAM:\n ./engine <FILENAME> <HOW MANY ELEMENTS> <OPTIONS>\n";
-    exit(0);
-  }
-
   
-  std::ofstream datafile;                         //File stream declaration
-  unsigned int elements= atoi(argv[2]);         //Number of elements
-  unsigned short int options=atoi(argv[3]);       //options for allocation
-
-  
-  timer STOPEREK;
-  stru::array<int> tablica;
-  stru::stack<int> stosik;
-  stru::queue<int> kolejka;
-  stru::list<int>  lista;
-
-  
-  datafile.open(argv[1]);                         //Open file with name of first argument
-
-  if(datafile.is_open()){
-
-    datafile<<"stos, elements:"<<elements<<"\n";
-    datafile<<STOPEREK.measure_time(stosik, 20, elements, options)<<"\n";
-    datafile<<"kolejka, elements:"<<elements<<"\n";
-    datafile<<STOPEREK.measure_time(kolejka, 20, elements, options)<<"\n";
-    datafile<<"lista, elements:"<<elements<<"\n";
-    datafile<<STOPEREK.measure_time(lista, 20, elements, options)<<"\n";
-
-    
-  }                  //If opened succesfully 
-
   //  std::cout << STOPEREK.measure_time(stosik,1, 10, 1)<<"\n";
+
+
+
+  stru::array<int> tablica;
+
+  tablica.push_back(2);
+  tablica.push_back(1);
+  tablica.push_back(4);
+  tablica.push_back(2);
+  tablica.push_back(3);
+  tablica.print();
+  
+
+  //std::cout  << "jestem\n";
+  quick_sort(tablica,0,4);
+
+  
+  tablica.print();
+
   
   return 0;
     

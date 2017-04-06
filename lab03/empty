@@ -1,7 +1,0 @@
-Jeffrey Collier
-                   Robert Toukmond
-                   Thomas Stock
-
-
-
-free | awk '/^-/ { printf "Mem: ' %.0f%%\n", 100*$3/($3+$4)}'
