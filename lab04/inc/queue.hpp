@@ -2,9 +2,9 @@
 #define QUEUE_HPP
 
 #include<iostream>
-#include"irunnable.hpp"
-#include"isearchable.hpp"
-#include "iqueue.hpp"
+#include"Interfaces/irunnable.hpp"
+#include"Interfaces/isearchable.hpp"
+#include "IContainers/iqueue.hpp"
 #include"node.hpp"
 
 namespace stru{
@@ -31,9 +31,9 @@ namespace stru{
     virtual TYP dequeue();
     
     //Metods from irunnable interface:
-    virtual void perform_run(unsigned int size, unsigned short int option);
+    virtual void perform_run(unsigned int size, char option);
     virtual void reset();
-    virtual void prepare(unsigned int size);
+    virtual void prepare(unsigned int size, char option);
     
     //methods from isearchable interface:
     virtual TYP search(TYP what);
@@ -106,13 +106,13 @@ namespace stru{
   }
 
   template<typename TYP>
-  void queue<TYP>::perform_run(unsigned int size, unsigned short option){
+  void queue<TYP>::perform_run(unsigned int size,char option){
 
     this->search(666);
   }
 
   template<typename TYP>
-  void queue<TYP>::prepare(unsigned int size){
+  void queue<TYP>::prepare(unsigned int size, char option){
 
     for (unsigned int i=0; i < (size-1); i++) {
       this->enqueue(2);

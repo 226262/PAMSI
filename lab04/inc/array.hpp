@@ -38,12 +38,14 @@
 
 
 #include<iostream>
-#include"irunnable.hpp"
+#include"Interfaces/irunnable.hpp"
+#include"Interfaces/iquicksortable.hpp"
+#include "IContainers/iarray.hpp"
 
 namespace stru                        //my namespace "STRUctures"
 {
   template <typename TYP>
-  class array : public stru::irunnable{//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  class array : public stru::iarray<TYP>, public stru::irunnable, public stru::iquicksortable<TYP>{//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         
   private:   //DEFAULT PRIVATE SPECIFICATOR
 
@@ -54,6 +56,7 @@ namespace stru                        //my namespace "STRUctures"
     //Private method fo allocation:
     void allocate_to(unsigned int howmany);
 
+    
         
   public:     //PUBLIC SPECIFICATOR           
 
@@ -63,10 +66,15 @@ namespace stru                        //my namespace "STRUctures"
     virtual ~array();
       
     //Interface from Irunnable:
-    virtual void perform_run(unsigned int size, unsigned short int option);
+    virtual void perform_run(unsigned int size,char option);
     virtual void reset();
-    virtual void prepare(unsigned int size);
-      
+    virtual void prepare(unsigned int size, char option);
+
+    //Interface from Iquicksortable:
+    virtual TYP& operator[](unsigned int indeks) const;
+    virtual void set_element(TYP what);
+    virtual int get_last_index();
+    
     //specific methods for array:
     void push_back(TYP value,unsigned short int option=2);
     void pop_back();
@@ -76,18 +84,30 @@ namespace stru                        //my namespace "STRUctures"
     //Getters:
     const unsigned int get_capacity() const;
     const unsigned int get_size() const;
-
+    
     //Overloaded operators:
-    TYP& operator[](unsigned int indeks) const;
+    
         
   };//END OF CLASS ARRAY//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
+  
 
+  //DEFINITIONS OF METHODS ABOVE:
 
-    //DEFINITIONS OF METHODS ABOVE:
+  template <typename TYP>
+  int array<TYP>::get_last_index(){
 
+    return get_size()-1;
+  }
 
+  template <typename TYP>
+  void array<TYP>::set_element(TYP what){
+
+    this->push_back(what,2);
+  }
+
+  
   template <typename TYP>
   void array<TYP>::allocate_to(unsigned int howmany){
 
@@ -117,9 +137,10 @@ namespace stru                        //my namespace "STRUctures"
 
   //*************************************************//
   template <typename TYP>
-  void array<TYP>::perform_run(unsigned int size, unsigned short int option){
+  void array<TYP>::perform_run(unsigned int size, char option){
+    
     for(unsigned int i=0;i<size;i++){
-      this->push_back(TYP(0),option);
+      this->push_back(TYP(0),2);
     }
   }
 
@@ -255,14 +276,18 @@ namespace stru                        //my namespace "STRUctures"
   TYP& array<TYP>::operator[](unsigned int indeks) const{
     if(indeks<n){
       return this->tab[indeks];
-    }else
-      exit(0);
+    }else{
+      std::cerr<<"ERROR TABLICA POZA ZAKRESEM! \n";
+      return tab[0];
+    }
+      
+    
   }
 
   //*************************************************//
   template <typename TYP>
-  void array<TYP>::prepare(unsigned int size){
-        
+  void array<TYP>::prepare(unsigned int size,char option){
+    allocate_to(0);
   }
 
 

@@ -5,10 +5,10 @@
 #define STACK_HPP
 
 #include<iostream>
-#include"irunnable.hpp"
+#include"Interfaces/irunnable.hpp"
 #include"node.hpp"
-#include"istack.hpp"
-#include"isearchable.hpp"
+#include"IContainers/istack.hpp"
+#include"Interfaces/isearchable.hpp"
 
 namespace stru{
 
@@ -38,9 +38,9 @@ namespace stru{
     virtual TYP search(TYP what);
 
     //Irunnable interface:
-    virtual void perform_run(unsigned int size, unsigned short int option);
+    virtual void perform_run(unsigned int size, char option);
     virtual void reset();
-    virtual void prepare(unsigned int size);
+    virtual void prepare(unsigned int size, char option);
     //METDODS FO DEBUGGING:
     void print() const;
 
@@ -167,7 +167,7 @@ namespace stru{
   }
 
   template <typename TYP>
-  void stack<TYP>::prepare(unsigned int size){
+  void stack<TYP>::prepare(unsigned int size, char option){
       
     this->push(666);
 
@@ -178,7 +178,7 @@ namespace stru{
   }
 
   template <typename TYP>
-  void stack<TYP>::perform_run(unsigned int size, unsigned short int option){
+  void stack<TYP>::perform_run(unsigned int size, char option){
 
     this->search(666);
   }    

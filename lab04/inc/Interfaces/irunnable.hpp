@@ -14,10 +14,10 @@ namespace stru{
   public:
 
     irunnable(){}
-    virtual void perform_run(unsigned int size, unsigned short int option)=0;
+    virtual void perform_run(unsigned int size, char option)=0;
     virtual void reset()=0;
     virtual ~irunnable(){}
-    virtual void prepare(unsigned int size)=0;
+    virtual void prepare(unsigned int size,char option)=0;
 
   };
 

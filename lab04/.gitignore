@@ -5,8 +5,10 @@ src/*.cpp#
 src/*.cpp~
 inc/*.hpp#
 inc/*.hpp~
+src/.emacs.desktop
 *#
 *~
+wyniki/
 GRTAGS
 GPATH
 GSYMS
@@ -19,3 +21,4 @@ engine
 informacje
 informacje~
 todo
+.vscode/

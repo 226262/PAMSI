@@ -15,47 +15,49 @@
  *    GNU General Public License for more details.                                   *        
  *                                                                                   *        
  *    You should have received a copy of the GNU General Public License              *                    
- *    along with this program; if not, write to the Free Software                    *        
+ *    along with this program; if not, write to the Free Software                   *        
  *    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA     *    
  *                                                                                   *        
  *************************************************************************************/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  This program contains multiple interfaces with implementation.
+  Basic usage is for measuring time of some classes which derive
+  from irunnable interface 
+  
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 #include<iostream>
 #include<fstream>
 #include<cstdlib>
+#include<ctime>
 
 #include"../inc/array.hpp"
 #include"../inc/timer.hpp"
-#include"../inc/stack.hpp"
+#include"../inc/stack.hpp" 
 #include "../inc/queue.hpp"
 #include"../inc/list.hpp"
-#include"../inc/quicksort.hpp"
-
+#include"../inc/Algorithms/quicksort.hpp"
 
 //*********************************************************//
 int main(int argc, char *argv[]){
 
   
   //  std::cout << STOPEREK.measure_time(stosik,1, 10, 1)<<"\n";
+  srand(time(NULL));
 
-
-
+  timer STOPEREK;
+  
   stru::array<int> tablica;
 
-  tablica.push_back(2);
-  tablica.push_back(1);
-  tablica.push_back(4);
-  tablica.push_back(2);
-  tablica.push_back(3);
-  tablica.print();
-  
-
-  //std::cout  << "jestem\n";
-  quick_sort(tablica,0,4);
+  quicksort sortownik(tablica);
 
   
-  tablica.print();
+  //  sortownik.sort(0, 19, 1);
+  std::cout<<STOPEREK.measure_time(sortownik,100, 10, 'c')<<"\n";
 
-  
+
+  //std::cout << "jestem\n";
+      
   return 0;
     
 }

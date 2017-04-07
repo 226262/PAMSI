@@ -24,7 +24,6 @@ namespace stru{
         ~node(){};
 
     };
-
 }
 
 #endif
