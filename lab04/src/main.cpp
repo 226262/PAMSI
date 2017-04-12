@@ -15,7 +15,7 @@
  *    GNU General Public License for more details.                                   *        
  *                                                                                   *        
  *    You should have received a copy of the GNU General Public License              *                    
- *    along with this program; if not, write to the Free Software                   *        
+ *    along with this program; if not, write to the Free Software                    *        
  *    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA     *    
  *                                                                                   *        
  *************************************************************************************/
@@ -45,18 +45,59 @@ int main(int argc, char *argv[]){
   //  std::cout << STOPEREK.measure_time(stosik,1, 10, 1)<<"\n";
   srand(time(NULL));
 
+    if(argc<3){
+    std::cerr<<"USE THIS PROGRAM:\n ./engine <FILENAME> <HOW MANY ELEMENTS> <OPTIONS>\n";
+    exit(0);
+  }
+
+  
+  std::ofstream datafile;                         //File stream declaration
+  unsigned int elements= atoi(argv[2]);         //Number of elements
+  char  options=atoi(argv[3]);       //options for allocation
+  char options_run=*argv[4];
+
   timer STOPEREK;
   
   stru::array<int> tablica;
 
   quicksort sortownik(tablica);
 
+
+  
+  datafile.open(argv[1]);                         //Open file with name of first argument
+
+  if(datafile.is_open()){
+
+    datafile<<"RANDOM:\n";
+    datafile<<STOPEREK.measure_time(sortownik, 1, elements, 'r','f')<<" Pivot first\n";    
+    datafile<<STOPEREK.measure_time(sortownik, 1, elements, 'r','l')<<" Pivot last\n";
+    datafile<<STOPEREK.measure_time(sortownik, 1, elements, 'r','m')<<" Pivot middle\n";
+    
+    datafile<<"INCREASING:\n";
+    datafile<<STOPEREK.measure_time(sortownik, 1, elements, 'i','f')<<" Pivot first\n";    
+    datafile<<STOPEREK.measure_time(sortownik, 1, elements, 'i','l')<<" Pivot last\n";
+    datafile<<STOPEREK.measure_time(sortownik, 1, elements, 'i','m')<<" Pivot middle\n";
+
+    datafile<<"DECREASING:\n";
+    datafile<<STOPEREK.measure_time(sortownik, 1, elements, 'd','f')<<" Pivot first\n";    
+    datafile<<STOPEREK.measure_time(sortownik, 1, elements, 'd','l')<<" Pivot last\n";
+    datafile<<STOPEREK.measure_time(sortownik, 1, elements, 'd','m')<<" Pivot middle\n";
+           
+  } 
+
+
   
   //  sortownik.sort(0, 19, 1);
-  std::cout<<STOPEREK.measure_time(sortownik,100, 10, 'c')<<"\n";
+  //                                      RAZY:  ILOŚC:
+  // std::cout<<STOPEREK.measure_time(sortownik,20, 1000, 'd','f')<<"\n";
 
 
-  //std::cout << "jestem\n";
+  //  sortownik.prepare(10,'u' );
+  // sortownik.fill_random(10);
+  // tablica.print();
+  //sortownik.sort(0,9,2);
+  //tablica.print();
+  // std::cout <<(9-0)/2<< "jestem\n";
       
   return 0;
     

@@ -5,8 +5,9 @@ timer::timer(){}
 
 timer::~timer(){}
 
+
 unsigned int timer::measure_one(stru::irunnable& ToMeasure, unsigned int size
-				,char option){
+				,char option,char option_perform){
 
   //Reset object to measurement
   ToMeasure.reset();  
@@ -15,7 +16,7 @@ unsigned int timer::measure_one(stru::irunnable& ToMeasure, unsigned int size
   //START CLOCK
   auto start_time= Clock::now();    
   //Calculate!
-  ToMeasure.perform_run(size,option);   
+  ToMeasure.perform_run(size,option_perform);   
   //END CLOCK
   auto end_time=Clock::now();         
   //again reset object
@@ -26,7 +27,7 @@ unsigned int timer::measure_one(stru::irunnable& ToMeasure, unsigned int size
 }
 
 unsigned int timer::measure_time(stru::irunnable& ToMeasure, unsigned int HowManyTimes,
-				 unsigned int size,char option){
+				 unsigned int size,char option,char option_perform){
 
 
   if(HowManyTimes<=0){
@@ -35,7 +36,7 @@ unsigned int timer::measure_time(stru::irunnable& ToMeasure, unsigned int HowMan
 
   }else if(HowManyTimes==1){
 
-    return measure_one(ToMeasure,size,option);
+    return measure_one(ToMeasure,size,option,option_perform);
 
   }else{
 
@@ -43,7 +44,7 @@ unsigned int timer::measure_time(stru::irunnable& ToMeasure, unsigned int HowMan
     unsigned int*  tablition= new unsigned int[HowManyTimes];  //Create array for measurement times
 
     for(unsigned int i=0;i<HowManyTimes;i++){
-      tablition[i]=measure_one(ToMeasure,size,option );  //Write measurement to array
+      tablition[i]=measure_one(ToMeasure,size,option, option_perform );  //Write measurement to array
       sum+=tablition[i];                                 //increase sum
     }
         

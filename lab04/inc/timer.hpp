@@ -17,7 +17,7 @@ class timer{
     
   //Private methods:
   unsigned int measure_one(stru::irunnable& ToMeasure, unsigned int size
-			   ,char option);
+			   ,char option,char option_perform);
     
 public:
 
@@ -27,7 +27,7 @@ public:
 
   //Public methods:
   unsigned int measure_time(stru::irunnable& ToMeasure, unsigned int HowManyTimes
-			    ,unsigned int size,char option);
+			    ,unsigned int size,char option,char option_perform);
 
 };
 
