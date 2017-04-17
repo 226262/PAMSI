@@ -42,14 +42,12 @@
 int main(int argc, char *argv[]){
 
   
-  //  std::cout << STOPEREK.measure_time(stosik,1, 10, 1)<<"\n";
   srand(time(NULL));
 
-    if(argc<3){
+  if(argc<3){
     std::cerr<<"USE THIS PROGRAM:\n ./engine <FILENAME> <HOW MANY ELEMENTS> <OPTIONS>\n";
     exit(0);
   }
-
   
   std::ofstream datafile;                         //File stream declaration
   unsigned int elements= atoi(argv[2]);         //Number of elements
@@ -63,8 +61,8 @@ int main(int argc, char *argv[]){
   quicksort sortownik(tablica);
 
 
-  
-  datafile.open(argv[1]);                         //Open file with name of first argument
+  //Open file with name of first argument
+  datafile.open(argv[1]);                        
 
   if(datafile.is_open()){
 
@@ -84,20 +82,6 @@ int main(int argc, char *argv[]){
     datafile<<STOPEREK.measure_time(sortownik, 1, elements, 'd','m')<<" Pivot middle\n";
            
   } 
-
-
-  
-  //  sortownik.sort(0, 19, 1);
-  //                                      RAZY:  ILOŚC:
-  // std::cout<<STOPEREK.measure_time(sortownik,20, 1000, 'd','f')<<"\n";
-
-
-  //  sortownik.prepare(10,'u' );
-  // sortownik.fill_random(10);
-  // tablica.print();
-  //sortownik.sort(0,9,2);
-  //tablica.print();
-  // std::cout <<(9-0)/2<< "jestem\n";
       
   return 0;
     

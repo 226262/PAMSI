@@ -1,7 +1,11 @@
+/*
+  This class sorts user defined class (interface iquicksortable), and uses implementation of quicksort algorithm.
+
+*/
+
 
 #ifndef QUICKSORT_HPP
 #define QUICKSORT_HPP
-
 
 #include<cstdlib>
 #include<iostream>
@@ -11,7 +15,7 @@
 class quicksort: public stru::irunnable{
 
 private:
-  
+  //iquicksortable object to sort
   stru::iquicksortable<int>& object;
   
 public:
@@ -62,6 +66,7 @@ quicksort::quicksort(stru::iquicksortable<int>& starter)
 quicksort::~quicksort(){
   
 }
+
 
 void quicksort::sort(int left,int right, int option){
 
@@ -142,6 +147,7 @@ void quicksort::reset(){
   
 }
 
+
 void quicksort::prepare(unsigned int size,char option){
 
   //Options: r- fill with random numbers
@@ -165,15 +171,15 @@ void quicksort::prepare(unsigned int size,char option){
     for (unsigned int i=0;i<(size-1)/2;i++){
       swap(i,(size-1)-i);
     }
-    
     break;
+
   default:
     fill_random(size);
     break;
+
   }
   
   
 }
   
-
 #endif
