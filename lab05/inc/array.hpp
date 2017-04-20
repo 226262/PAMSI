@@ -280,7 +280,8 @@ namespace stru                        //my namespace "STRUctures"
       std::cerr<<"ERROR TABLICA POZA ZAKRESEM! \n";
       return tab[0];
     }
-          
+      
+    
   }
 
   //*************************************************//
