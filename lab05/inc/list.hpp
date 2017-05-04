@@ -26,7 +26,7 @@ namespace stru{
     //Constructors and destructor:
     list();
     virtual ~list();
-
+    
 
     //Ilist interface:
     virtual const unsigned int size() const;
