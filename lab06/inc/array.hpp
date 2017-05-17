@@ -55,7 +55,7 @@ private:   //DEFAULT PRIVATE SPECIFICATOR
   //Private method fo allocation:
   void allocate_to(unsigned int howmany);
 
-    
+  
         
 public:     //PUBLIC SPECIFICATOR           
 

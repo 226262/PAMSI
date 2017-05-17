@@ -22,7 +22,7 @@ unsigned int timer::measure_one(irunnable& ToMeasure, unsigned int size
   //again reset object
   ToMeasure.reset();       
   //Print measured time:
-  return std::chrono::duration_cast<std::chrono::microseconds>(end_time-start_time).count();
+  return std::chrono::duration_cast<std::chrono::nanoseconds>(end_time-start_time).count();
 
 }
 

@@ -41,22 +41,42 @@
 //*********************************************************//
 int main(int argc, char *argv[]){
 
+
+  unsigned int size= atoi(argv[1]);         
+  unsigned int elements= atoi(argv[2]);     
   //Set time for random numbers 
   srand(time(NULL));
+  timer timerek;
+  dictionary<std::string,int> dict(size);
 
-  dictionary<std::string,int> dict(20);
+  
+  
 
+  std::cout <<"simple: "<<timerek.measure_time(dict,10,elements,'s','s')<<"\n";
+  std::cout <<"good: "<<timerek.measure_time(dict,10,elements,'e','e')<<"\n";
+
+  
+  /*
+  dict.add_couple("1",666);
   dict.add_couple("dupa",666);
-  dict.add_couple("zupa",666);
-  dict.add_couple("grzybeczki",666);
-  dict.add_couple("zenit_chempion",666);
-  dict.add_couple("ALLAHU AKHBAR!",666);
-  dict.add_couple("Wrestling_wrestler_fucking_sucker",666);
+  dict.add_couple("zzzzzzzz",823);
+  dict.add_couple("ksnd",666);
+  dict.add_couple("sadf",666);
+  dict.add_couple("dfds",666);
+  dict.add_couple("dsad",666);
+  dict.add_couple("zuap",666);
   dict.print();
 
-    
+  
+  dict.lookup("zupa");
+  */
 
-      
+  //  dict.prepare(1000,'s');
+  //dict.print();
+
+  
+
+  
   return 0;
     
 }

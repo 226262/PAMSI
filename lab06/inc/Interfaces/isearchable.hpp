@@ -11,7 +11,7 @@ public:
   virtual TYP search(TYP what)=0;
     
 };
-  
+
  
 
 #endif

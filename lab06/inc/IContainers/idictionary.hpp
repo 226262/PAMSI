@@ -14,11 +14,11 @@ public:     //PUBLIC SPECIFICATOR
      
 
   //specific methods for dictionary
-  virtual DATA_TYPE& lookup(KEY_TYPE key)const =0;
+  virtual DATA_TYPE lookup(KEY_TYPE key, char option)const =0;
   virtual void delete_couple(KEY_TYPE key)=0;
-  virtual void add_couple(KEY_TYPE key, DATA_TYPE data)=0;
+  virtual void add_couple(KEY_TYPE key, DATA_TYPE data,char option)=0;
   virtual void reassign(KEY_TYPE key, DATA_TYPE data)=0;
-  virtual DATA_TYPE& operator[](KEY_TYPE key)=0;
+  virtual DATA_TYPE operator[](KEY_TYPE key)=0;
   
   //Getters:
 

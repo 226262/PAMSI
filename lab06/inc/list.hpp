@@ -18,6 +18,7 @@ class list : public irunnable, public ilist<TYP>,public isearchable<TYP>{ //~~~~
 private:
 
   node<TYP>* head;
+  node<TYP>* iterator;
   unsigned int capacity;
       
 public:
@@ -33,7 +34,6 @@ public:
   virtual void push_front(TYP what);                //Put "what" on top of list
   virtual TYP pop_front();                          //Remove element from top of list
   virtual TYP get_next();
-
   //Isearchable interface:
   virtual TYP search(TYP what);
 
@@ -54,6 +54,7 @@ public:
 template <typename TYP>
 list<TYP>::list()
   :head(nullptr)
+  ,iterator(nullptr)
   ,capacity(0)
 {
 }
@@ -101,6 +102,7 @@ void list<TYP>::push_front(TYP what){
   if(head==nullptr){
     head= new node<TYP>;
     head->set_element(what);
+    iterator=head;
 
   }else{
 
@@ -114,11 +116,13 @@ void list<TYP>::push_front(TYP what){
 
 template <typename TYP>
 TYP list<TYP>::top(){
-
-  if(head!=nullptr){
-    return head->get_element();
+  
+  iterator=head;
+  
+  if(iterator!=nullptr){
+    return iterator->get_element();
   }else{
-    std::cerr<<"NO ELEMENTS IN THE LIST\n";
+    std::cerr<<"NO ELEMENTS IN THE LIST TOP\n";
     return TYP(0);
   }
 }
@@ -126,10 +130,21 @@ TYP list<TYP>::top(){
 template <typename TYP>
 TYP list<TYP>::get_next(){
 
-  if(head!=nullptr){
-    return  head->get_next()->get_element();
+  node<TYP>* tempptr;
+
+  tempptr=iterator;
+  
+  if(iterator!=nullptr){
+
+    if(iterator->get_next()!=nullptr){
+      
+      iterator=tempptr->get_next();
+      return  tempptr->get_next()->get_element();
+    }else{
+      return iterator->get_element();
+    }
   }else{
-    std::cerr<<"NO ELEMENTS IN THE LIST\n";
+    std::cerr<<"NO ELEMENTS IN THE LIST FOR ITERATOR\n";
     return TYP(0);
   }
 }
@@ -146,7 +161,9 @@ TYP list<TYP>::pop_front(){
     delete oldnode;
 
     capacity--;
-	    
+
+    iterator=head;
+    
     return to_return;
 	    
   }else{
@@ -165,6 +182,7 @@ void list<TYP>::reset(){
 
     node<TYP>* oldnode= head;
     head=oldnode->get_next();
+    iterator=head;
     delete oldnode;
   }
 
