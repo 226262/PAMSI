@@ -6,6 +6,8 @@
 */inc/*.h~
 *#
 *~
+/obliczenia/*.*
+/obliczenia/*
 GRTAGS
 GPATH
 GSYMS

@@ -37,44 +37,24 @@
 #include"../inc/Algorithms/quicksort.hpp"
 #include "../inc/dictionary.hpp"
 #include "../inc/couple.hpp"
+#include "../inc/tree_AVL.hpp"
 
 //*********************************************************//
 int main(int argc, char *argv[]){
 
-
-  //  unsigned int size= atoi(argv[1]);         
-  //unsigned int elements= atoi(argv[2]);     
+  
+  if(argc<3){
+    return 0;
+  }
+  
+  unsigned int howmany= atoi(argv[1]);         
+  unsigned int elements= atoi(argv[2]); 
   //Set time for random numbers 
   srand(time(NULL));
-  timer timerek;
-  dictionary<std::string,int> dict(10);
+  tree_AVL<unsigned int> drzefko;
+  timer licznik;
 
-  
-  //  std::cout <<"simple: "<<timerek.measure_time(dict,10,elements,'s','s')<<"\n";
-  //  std::cout <<"good: "<<timerek.measure_time(dict,10,elements,'e','e')<<"\n";
-
-   
-  dict.add_couple("1",666);
-  dict.add_couple("2",666);
-
-  dict.add_couple("dupa",666);
-  dict.add_couple("zzzzzzzz",823);
-  dict.add_couple("ksnd",666);
-  dict.add_couple("sadf",666);
-  dict.add_couple("dfds",666);
-  dict.add_couple("dsad",666);
-  dict.add_couple("zuap",666);
-  dict.print();
-
-  
-  dict.lookup("zupa");
-  
-
-  //  dict.prepare(1000,'s');
-  //dict.print();
-
-  
-
+  std::cout <<"ELEMENTS: "<<elements<<" Time: "<< licznik.measure_time(drzefko,howmany, elements , 'c' , 'c' ) << "\n";
   
   return 0;
     
